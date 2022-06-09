@@ -38,6 +38,7 @@ module.exports = function spawnConnection(datastore, cb) {
         return errorMessage.indexOf("Client has encountered a connection error") >= 0 ||
           errorMessage.indexOf("terminating connection") >= 0 ||
           errorMessage.indexOf("Connection terminated") >= 0 ||
+          errorMessage.indexOf("network socket disconnected") >= 0 ||
           ["ECONNRESET", "ECONNREFUSED"].indexOf(errorCode) >= 0;
       }
 
